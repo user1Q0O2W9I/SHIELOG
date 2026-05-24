@@ -1,0 +1,28 @@
+Apr 29 10:14:02 firewall01 SSH_LOGIN_FAILED src=185.220.101.4 user=root port=22
+Apr 29 10:14:10 firewall01 SSH_LOGIN_FAILED src=185.220.101.4 user=admin port=22
+Apr 29 10:14:21 firewall01 SSH_LOGIN_SUCCESS src=192.168.1.15 user=juan port=22
+
+Apr 29 10:15:02 webserver01 HTTP_REQUEST ip=203.0.113.45 method=GET url=/index.php status=200
+Apr 29 10:15:05 webserver01 HTTP_REQUEST ip=203.0.113.45 method=GET url=/admin status=403
+Apr 29 10:15:11 webserver01 HTTP_REQUEST ip=45.95.147.21 method=POST url=/login status=401
+
+Apr 29 10:16:45 ids01 ALERT type=SQL_INJECTION src=45.95.147.21 target=/login severity=high
+Apr 29 10:16:52 ids01 ALERT type=BRUTE_FORCE src=185.220.101.4 attempts=15 severity=critical
+
+Apr 29 10:17:10 proxy01 DNS_QUERY src=192.168.1.22 domain=google.com result=OK
+Apr 29 10:17:15 proxy01 DNS_QUERY src=192.168.1.22 domain=malicious-site.ru result=BLOCKED
+
+Apr 29 10:18:01 vpn01 VPN_LOGIN_SUCCESS user=empresa ip=84.122.33.91
+Apr 29 10:18:22 vpn01 VPN_LOGIN_FAILED user=test ip=91.134.55.12
+
+Apr 29 10:19:03 endpoint01 MALWARE_DETECTED host=PC-MARIA malware=Trojan.Generic severity=high
+Apr 29 10:19:20 endpoint01 FILE_QUARANTINED host=PC-MARIA file=invoice.exe
+
+Apr 29 10:20:05 db01 MYSQL_LOGIN_FAILED user=root src=45.95.147.21
+Apr 29 10:20:11 db01 MYSQL_LOGIN_SUCCESS user=app_user src=192.168.1.50
+
+Apr 29 10:21:44 waf01 BLOCKED_REQUEST ip=45.95.147.21 reason=XSS_ATTACK
+Apr 29 10:21:58 waf01 BLOCKED_REQUEST ip=185.220.101.4 reason=RATE_LIMIT
+
+Apr 29 10:22:30 mail01 SMTP_LOGIN_SUCCESS user=soporte@empresa.com ip=192.168.1.70
+Apr 29 10:22:41 mail01 SMTP_LOGIN_FAILED user=admin@empresa.com ip=203.0.113.91

@@ -1,0 +1,36 @@
+Apr 29 23:41:02 firewall01 SSH_LOGIN_FAILED src=45.95.147.21 user=root port=22
+Apr 29 23:41:04 firewall01 SSH_LOGIN_FAILED src=45.95.147.21 user=admin port=22
+Apr 29 23:41:06 firewall01 SSH_LOGIN_FAILED src=45.95.147.21 user=test port=22
+Apr 29 23:41:08 firewall01 SSH_LOGIN_FAILED src=45.95.147.21 user=oracle port=22
+Apr 29 23:41:10 firewall01 SSH_LOGIN_FAILED src=45.95.147.21 user=ubuntu port=22
+Apr 29 23:41:15 firewall01 BRUTE_FORCE_DETECTED src=45.95.147.21 attempts=120 severity=critical
+
+Apr 29 23:42:01 ids01 ALERT type=SQL_INJECTION src=45.95.147.21 target=/admin/login severity=critical
+Apr 29 23:42:05 ids01 ALERT type=REMOTE_CODE_EXECUTION src=45.95.147.21 target=/upload.php severity=critical
+Apr 29 23:42:08 ids01 ALERT type=XSS_ATTACK src=45.95.147.21 target=/search severity=high
+
+Apr 29 23:43:11 waf01 BLOCKED_REQUEST ip=45.95.147.21 reason=COMMAND_INJECTION
+Apr 29 23:43:14 waf01 BLOCKED_REQUEST ip=45.95.147.21 reason=PATH_TRAVERSAL
+Apr 29 23:43:16 waf01 BLOCKED_REQUEST ip=45.95.147.21 reason=RCE_ATTEMPT
+
+Apr 29 23:44:01 endpoint01 MALWARE_DETECTED host=SRV-FINANCE malware=Ransomware.Lockbit severity=critical
+Apr 29 23:44:05 endpoint01 FILE_ENCRYPTION_ACTIVITY host=SRV-FINANCE files=2451 severity=critical
+Apr 29 23:44:08 endpoint01 ANTIVIRUS_DISABLED host=SRV-FINANCE user=SYSTEM severity=critical
+
+Apr 29 23:45:10 db01 MYSQL_LOGIN_FAILED user=root src=45.95.147.21
+Apr 29 23:45:15 db01 PRIVILEGE_ESCALATION user=app_service target=DB_ADMIN severity=critical
+Apr 29 23:45:20 db01 DATABASE_DUMP_DETECTED user=unknown size=14GB severity=critical
+
+Apr 29 23:46:01 proxy01 DNS_QUERY src=192.168.1.22 domain=darkc2-malware.ru result=ALLOWED
+Apr 29 23:46:05 proxy01 C2_TRAFFIC_DETECTED src=192.168.1.22 destination=185.225.69.12 severity=critical
+
+Apr 29 23:47:01 vpn01 VPN_LOGIN_SUCCESS user=admin ip=185.225.69.12
+Apr 29 23:47:04 vpn01 IMPOSSIBLE_TRAVEL_DETECTED user=admin previous_country=Spain current_country=Russia severity=high
+
+Apr 29 23:48:01 siem01 INCIDENT_CREATED type=DATA_BREACH severity=critical affected_records=120000
+Apr 29 23:48:08 siem01 INCIDENT_UPDATED status=ACTIVE_ATTACK response_team=NOTIFIED
+
+Apr 29 23:49:11 cloud01 IAM_POLICY_CHANGED user=unknown action=DISABLE_MFA severity=critical
+Apr 29 23:49:18 cloud01 ROOT_ACCOUNT_LOGIN ip=185.225.69.12 severity=critical
+
+Apr 29 23:50:01 backup01 BACKUP_DELETED user=SYSTEM target=nightly_backup severity=critical

